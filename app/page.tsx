@@ -111,10 +111,11 @@ export default function Page() {
             </li>
           </ul>
         <br/>
-
       </ul>
+      <br/>
 
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+
+      {/* <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
         teaching
       </h1>
       <ul>
@@ -141,7 +142,7 @@ export default function Page() {
             <li>TA: Spring 2021</li>
           </ul>
           <br/>
-      </ul>
+      </ul> */}
 
     </section>
 
