@@ -25,11 +25,11 @@ export default function Page() {
         keri mallari
       </h1>
       <p className="mb-4">
-        {`I am Keri. I'm a PhD Student at the University of Washington's Human Centered Design and Engineering Department. Broadly interested in using my technical skills to develop tools to support online live stream communities. I like to think I'm a part of the HCI and CSCW community`}
+        {`Yo, I'm Keri. I'm a PhD Student at the University of Washington's Human Centered Design and Engineering Department. I'm a Human-Computer Interaction (HCI) and Machine Learning (ML) Researcher.`}
       </p>
 
       <p className="mb-4">
-        {`The rest of this site is still under construction`}
+        {'My work focuses on designing experiments, conducting statistical analysis, optimizing models, and developing data-driven solutions to improve user experiences while creating inclusive online spaces.'}
       </p>
 
       <br/>
@@ -113,6 +113,10 @@ export default function Page() {
         <br/>
       </ul>
       <br/>
+
+      {/* <div className="my-8">
+        <BlogPosts />
+      </div> */}
 
 
       {/* <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
