@@ -25,7 +25,7 @@ export default function Page() {
         keri mallari
       </h1>
       <p className="mb-4">
-        {`Yo, I'm Keri. I'm a PhD Student at the University of Washington's Human Centered Design and Engineering Department. I'm a Human-Computer Interaction (HCI) and Machine Learning (ML) Researcher.`}
+        {`Hello, I'm Keri. I'm a PhD Candidate at the University of Washington's Human Centered Design and Engineering Department. I'm a Human-Computer Interaction (HCI) Researcher that often applied Machine Learning (ML) techniques to my work.`}
       </p>
 
       <p className="mb-4">
