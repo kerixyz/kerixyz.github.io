@@ -66,6 +66,46 @@ export default function Page() {
           </ul>
           <br/>
 
+        
+        <li><b>Human-AI Interaction</b></li>
+          <ul>
+            <li>
+              <a
+                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://arxiv.org/pdf/2410.15471"
+              >
+                <ArrowIcon />
+                <p className="ml-2 h-7">Human-LM Alignment</p>
+              </a>
+            </li>
+            <li>
+              <a
+                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://dl.acm.org/doi/abs/10.1145/3534561"
+              >
+                <ArrowIcon />
+                <p className="ml-2 h-7">Advancing Human-AI Complementarity</p>
+              </a>
+            </li>
+
+            <li>
+              <a
+                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://dl.acm.org/doi/abs/10.1145/3313831.3376257"
+              >
+                <ArrowIcon />
+                <p className="ml-2 h-7">Examining how Race Presentation Impacts Human Judgement of Recidivism</p>
+              </a>
+            </li>
+          </ul>
+        <br/>
+
         <li><b>Future of Work and Hybrid Experiences</b></li>
           <ul>
 
@@ -95,33 +135,6 @@ export default function Page() {
           </ul> 
           <br/>
 
-        <li><b>Human-AI Interaction</b></li>
-          <ul>
-            <li>
-              <a
-                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://dl.acm.org/doi/abs/10.1145/3534561"
-              >
-                <ArrowIcon />
-                <p className="ml-2 h-7">Advancing Human-AI Complementarity</p>
-              </a>
-            </li>
-
-            <li>
-              <a
-                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://dl.acm.org/doi/abs/10.1145/3313831.3376257"
-              >
-                <ArrowIcon />
-                <p className="ml-2 h-7">Examining how Race Presentation Impacts Human Judgement of Recidivism</p>
-              </a>
-            </li>
-          </ul>
-        <br/>
       </ul>
       <br/>
 
