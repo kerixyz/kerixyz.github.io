@@ -1,31 +1,95 @@
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
 
-const notebooksDir = path.join(process.cwd(), 'app/notebooks/posts');
+type Metadata = {
+  title: string;
+  date: string;
+  summary: string;
+  image?: string;
+};
 
-export function getNotebookPosts() {
-  const files = fs.readdirSync(notebooksDir);
+function parseFrontmatter(fileContent: string) {
+  const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
+  const match = frontmatterRegex.exec(fileContent);
 
-  return files.map((file) => {
-    const fullPath = path.join(notebooksDir, file);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data } = matter(fileContents);
+  if (!match) {
+    throw new Error('Invalid frontmatter format');
+  }
+
+  const frontMatterBlock = match[1];
+  const content = fileContent.replace(frontmatterRegex, '').trim();
+  const frontMatterLines = frontMatterBlock.trim().split('\n');
+  const metadata: Partial<Metadata> = {};
+
+  frontMatterLines.forEach((line) => {
+    const [key, ...valueArr] = line.split(': ');
+    let value = valueArr.join(': ').trim();
+    value = value.replace(/^['"](.*)['"]$/, '$1'); // Remove quotes
+    metadata[key.trim() as keyof Metadata] = value;
+  });
+
+  return { metadata: metadata as Metadata, content };
+}
+
+function getMDXFiles(dir: string) {
+  return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx' || path.extname(file) === '.md');
+}
+
+function readMDXFile(filePath: string) {
+  const rawContent = fs.readFileSync(filePath, 'utf-8');
+  return parseFrontmatter(rawContent);
+}
+
+function getMDXData(dir: string) {
+  const mdxFiles = getMDXFiles(dir);
+  return mdxFiles.map((file) => {
+    const { metadata, content } = readMDXFile(path.join(dir, file));
+    const slug = path.basename(file, path.extname(file));
 
     return {
-      slug: file.replace('.md', ''), // Remove `.md` extension
-      ...data,
+      metadata,
+      slug,
+      content,
     };
   });
 }
 
-export function getNotebookPostBySlug(slug: string) {
-  const fullPath = path.join(notebooksDir, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
+export function getNotebookPosts() {
+  return getMDXData(path.join(process.cwd(), 'app', 'notebooks', 'posts'));
+}
 
-  return {
-    ...data,
-    content,
-  };
+export function formatDate(date: string, includeRelative = false) {
+  const currentDate = new Date();
+  if (!date.includes('T')) {
+    date = `${date}T00:00:00`;
+  }
+  const targetDate = new Date(date);
+
+  const yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
+  const monthsAgo = currentDate.getMonth() - targetDate.getMonth();
+  const daysAgo = currentDate.getDate() - targetDate.getDate();
+
+  let formattedDate = '';
+
+  if (yearsAgo > 0) {
+    formattedDate = `${yearsAgo}y ago`;
+  } else if (monthsAgo > 0) {
+    formattedDate = `${monthsAgo}mo ago`;
+  } else if (daysAgo > 0) {
+    formattedDate = `${daysAgo}d ago`;
+  } else {
+    formattedDate = 'Today';
+  }
+
+  const fullDate = targetDate.toLocaleString('en-us', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+
+  if (!includeRelative) {
+    return fullDate;
+  }
+
+  return `${fullDate} (${formattedDate})`;
 }
