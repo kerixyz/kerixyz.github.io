@@ -1,4 +1,4 @@
-// import { BlogPosts } from 'app/components/posts'
+import { NotebookPosts } from "app/components/notes"
 
 export const metadata = {
   title: 'Notebook',
@@ -10,7 +10,8 @@ export default function Page() {
     <section>
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Notes</h1>
       <p>I hope to write a bit more about small projects that I'm working on here adjacent to my research.</p>
-      {/* <BlogPosts /> */}
+      <br/>
+      <NotebookPosts />
     </section>
   )
 }
