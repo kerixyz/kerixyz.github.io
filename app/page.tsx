@@ -36,7 +36,7 @@ export default function Page() {
 
 
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        projects
+        research
       </h1>
       <ul>
         <li><b>Live Streamers and Feedback</b></li>
