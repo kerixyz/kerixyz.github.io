@@ -38,7 +38,7 @@ export default function Footer() {
             href="https://keri.xyz/cv1024.pdf"
           >
             <ArrowIcon />
-            <p className="ml-2 h-7">CV</p>
+            <p className="ml-2 h-7">cv</p>
           </a>
         </li>
         <li>
