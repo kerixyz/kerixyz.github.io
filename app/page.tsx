@@ -25,7 +25,7 @@ export default function Page() {
         keri mallari
       </h1>
       <p className="mb-4">
-        {`Hello, I'm Keri. I'm a PhD Candidate at the University of Washington's Human Centered Design and Engineering Department. I'm a Human-Computer Interaction (HCI) Researcher that often applied Machine Learning (ML) techniques to my work.`}
+        {`Hello, I'm Keri. I'm a PhD Candidate at the University of Washington's Human Centered Design and Engineering Department. I'm a Human-Computer Interaction (HCI) Researcher studying online feedback exchange in live stream communities.`}
       </p>
 
       <p className="mb-4">
@@ -41,6 +41,17 @@ export default function Page() {
       <ul>
         <li><b>Live Streamers and Feedback</b></li>
           <ul>
+          <li>
+                <a
+                  className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://streamfeed.xyz"
+                >
+                  <ArrowIcon />
+                  <p className="ml-2 h-7">Developing Constructive Feedback for Live Streamers</p>
+                </a>
+              </li>
             <li>
                 <a
                   className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
