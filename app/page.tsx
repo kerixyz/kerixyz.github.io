@@ -25,19 +25,12 @@ export default function Page() {
         keri mallari
       </h1>
       <p className="mb-4">
-        {`Hello, I'm Keri. I'm a PhD Candidate at the University of Washington's Human Centered Design and Engineering Department. I'm a Human-Computer Interaction (HCI) Researcher studying online feedback exchange in live stream communities.`}
+        {`Hello, I'm Keri. I'm a PhD Candidate at the University of Washington's Human Centered Design and Engineering Department. I'm a Human-Computer Interaction (HCI) Researcher studying online feedback exchange in live stream communities. My work spans across designing experiments, conducting statistical analysis, optimizing models, and developing data-driven solutions to improve user experiences while creating inclusive online spaces.`}
       </p>
 
-      <p className="mb-4">
-        {'My work focuses on designing experiments, conducting statistical analysis, optimizing models, and developing data-driven solutions to improve user experiences while creating inclusive online spaces.'}
-      </p>
-
-      <br/>
-
-
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+      <h2 className="mb-8 text-2xl font-semibold tracking-tighter">
         research
-      </h1>
+      </h2>
       <ul>
         <li><b>Live Streamers and Feedback</b></li>
           <ul>
@@ -66,7 +59,6 @@ export default function Page() {
           </ul>
           <br/>
 
-        
         <li><b>Human-AI Interaction</b></li>
           <ul>
             <li>
@@ -108,7 +100,6 @@ export default function Page() {
 
         <li><b>Future of Work and Hybrid Experiences</b></li>
           <ul>
-
             <li>
               <a
                 className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
@@ -120,7 +111,6 @@ export default function Page() {
                 <p className="ml-2 h-7">Hybrid Meeting Prototype</p>
               </a>
             </li>
-
             <li>
               <a
                 className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
@@ -171,7 +161,6 @@ export default function Page() {
           </ul>
           <br/>
       </ul> */}
-
     </section>
 
   )
