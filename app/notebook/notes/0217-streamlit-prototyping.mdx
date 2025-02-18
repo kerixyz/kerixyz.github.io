@@ -59,7 +59,7 @@ response = client.chat.completions.create(
 return response.choices[0].message.content
 ```
 
-In this snippet, I first clarify what the 'messages' are inside the chat completions call. First, we tell the system that they are an AI assistant, and then we provide the first message from the user asking them to summarize the text {input_text}. Then I specify the client by calling OpenAI, but also specifying the base_url to be perplexity as that's the api key I'm going to use. Then I call the chat completions create method, and specify the model to be `sonar-pro`, referencing the same messages above. 
+In this snippet, I first clarify what the 'messages' are inside the chat completions call. First, we tell the system that they are an AI assistant, and then we provide the first message from the user asking them to summarize the text `input_text`. Then I specify the client by calling OpenAI, but also specifying the base_url to be perplexity as that's the api key I'm going to use. Then I call the chat completions create method, and specify the model to be `sonar-pro`, referencing the same messages above. 
 
 # Streamlit App
 So far, I've mostly just used and written simple python code that one might use on a jupyter notebook or a short script. But now, we can just put all of this into a streamlit app. In our main function, we'll use st to refer to streamlit methods and classes, and start with things like 
