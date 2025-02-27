@@ -1,7 +1,7 @@
 ---
-title: "Streamlit for Prototyping"
+title: "Effectively Summarizing Youtube Comments"
 publishedAt: "2025-02-17"
-summary: "Quick Intro to Streamlit"
+summary: "Downloading youtube comments and summarizing youtube comments using streamlit, youtube-comment-downloader, and perplexity api"
 ---
 These days I'm looking for ways to do quick prototyping for some projects that I want to work on. I've heard about streamlit before, but have never really tried it until now. It was super easy and straightforward. Let me walk through a quick walkthrough of this app that scrapes youtube comments, and even summarizes them for you using either an openai or perplexity api key. 
 
@@ -10,7 +10,7 @@ I've mostly just started by using a template from streamlit and editing two file
 - `requirements.txt` just contains all of the packages that you usually install when you're running the app locally, so typically you'll have streamlit in there. 
 - `streamlit_app.py` is the file that contains basically all your code, and in this case I have a couple of functions. 
 
-# Comment Downloader
+## Comment Downloader
 Downloading the comments from Youtube comes from this package called [youtube-comment-downloader](https://github.com/egbertbouman/youtube-comment-downloader). 
 
 ```
@@ -41,7 +41,7 @@ downloader = YoutubeCommentDownloader()
 
 We essentially just get the comments from the URL, and then we put it into a pandas dataframe. In this case, we collected a lot of information into our dictionary including text, time, author, and more. We stored all of them into a pandas dataframe, that we'll use later for our summarization. 
 
-# Summarization 
+## Summarization 
 For summarization, we use an openai chat completion call to summarize the comments. As a student, I have access to a free pro plan for Perplexity which gives me a 5$ credit every month, so in this implementation I use the perplexity api key and their model `sonar-pro`. 
 
 ```
@@ -61,7 +61,7 @@ return response.choices[0].message.content
 
 In this snippet, I first clarify what the 'messages' are inside the chat completions call. First, we tell the system that they are an AI assistant, and then we provide the first message from the user asking them to summarize the text `input_text`. Then I specify the client by calling OpenAI, but also specifying the base_url to be perplexity as that's the api key I'm going to use. Then I call the chat completions create method, and specify the model to be `sonar-pro`, referencing the same messages above. 
 
-# Streamlit App
+## Streamlit App
 So far, I've mostly just used and written simple python code that one might use on a jupyter notebook or a short script. But now, we can just put all of this into a streamlit app. In our main function, we'll use st to refer to streamlit methods and classes, and start with things like 
 
 ```
