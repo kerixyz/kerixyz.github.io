@@ -128,9 +128,66 @@ export default function Page() {
       </ul>
       <br/>
 
-      {/* <div className="my-8">
-        <BlogPosts />
-      </div> */}
+      <h2 className="mb-8 text-2xl font-semibold tracking-tighter">
+        check out my friends
+      </h2>
+      <ul>
+        <li>
+            <a
+              className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.andrewneang.com/"
+            >
+                <ArrowIcon />
+                <p className="ml-2 h-7">Andrew Neang</p>
+            </a>
+        </li>
+        <li>
+            <a
+              className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.sprwilliams.com/"
+            >
+              <ArrowIcon />
+              <p className="ml-2 h-7">Spencer Williams</p>
+            </a>
+        </li>
+        <li>
+            <a
+              className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.neillytan.com/"
+            >
+              <ArrowIcon />
+              <p className="ml-2 h-7">Neilly Tan</p>
+            </a>
+        </li>
+        <li>
+            <a
+              className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://bogeumchoi.com/"
+            >
+              <ArrowIcon />
+              <p className="ml-2 h-7">Bogeum Choi</p>
+            </a>
+        </li>
+        <li>
+            <a
+              className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://willsutherland.com/"
+            >
+              <ArrowIcon />
+              <p className="ml-2 h-7">Will Sutherland</p>
+            </a>
+        </li>
+      </ul>
 
 
       {/* <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
