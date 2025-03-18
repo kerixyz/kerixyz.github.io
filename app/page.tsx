@@ -18,17 +18,102 @@ function ArrowIcon() {
   )
 }
 
+function TriangleIcon() {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6 2L10 10H2L6 2Z"
+        stroke="currentColor"
+        strokeWidth="1"
+        fill="none"
+      />
+    </svg>
+  )
+}
+
+function LeftPointingTriangleIcon() {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 6L2 10L2 2L10 6Z"
+        stroke="currentColor"
+        strokeWidth="1"
+        fill="none"
+      />
+    </svg>
+  )
+}
+
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+      <h1 className="mb-4 text-2xl font-semibold tracking-tighter">
         keri mallari
       </h1>
-      <p className="mb-4">
+      <p className="mb-2">
         {`Hello, I'm Keri. I'm a PhD Candidate at the University of Washington's Human Centered Design and Engineering Department. I'm a Human-Computer Interaction (HCI) Researcher studying online feedback exchange in live stream communities. My work spans across designing experiments, conducting statistical analysis, optimizing models, and developing data-driven solutions to improve user experiences while creating inclusive online spaces.`}
       </p>
 
-      <h2 className="mb-8 text-2xl font-semibold tracking-tighter">
+      <ul className="font-sm mt-2 mb-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
+        <li>
+          <a
+            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            rel="noopener noreferrer"
+            target="_blank"
+            href="mailto:kmallari@uw.edu"
+          >
+            <TriangleIcon />
+            <p className="ml-2 h-7">email </p>
+          </a>
+        </li>
+        <li>
+          <a
+            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://keri.xyz/cv1024.pdf"
+          >
+            <TriangleIcon />
+            <p className="ml-2 h-7">cv</p>
+          </a>
+        </li>
+        <li>
+          <a
+            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://scholar.google.com/citations?user=iO6gHzMAAAAJ&hl=en&oi=ao"
+          >
+            <TriangleIcon />
+            <p className="ml-2 h-7">publications</p>
+          </a>
+        </li>
+        <li>
+          <a
+            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://www.linkedin.com/in/kerixyz/"
+          >
+            <TriangleIcon />
+            <p className="ml-2 h-7">linkedin</p>
+          </a>
+        </li>
+      </ul>
+
+      <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
         research
       </h2>
       <ul>
@@ -123,13 +208,12 @@ export default function Page() {
               </a>
             </li>
           </ul> 
-          <br/>
+        <br/>
 
       </ul>
-      <br/>
 
-      <h2 className="mb-8 text-2xl font-semibold tracking-tighter">
-        check out my friends
+      <h2 className="mb-2 text-2xl font-semibold tracking-tighter">
+        check out some of my friends
       </h2>
       <ul>
         <li>
@@ -139,7 +223,7 @@ export default function Page() {
               target="_blank"
               href="https://www.andrewneang.com/"
             >
-                <ArrowIcon />
+                <LeftPointingTriangleIcon />
                 <p className="ml-2 h-7">Andrew Neang</p>
             </a>
         </li>
@@ -150,8 +234,8 @@ export default function Page() {
               target="_blank"
               href="https://www.sprwilliams.com/"
             >
-              <ArrowIcon />
-              <p className="ml-2 h-7">Spencer Williams</p>
+                <LeftPointingTriangleIcon />
+                <p className="ml-2 h-7">Spencer Williams</p>
             </a>
         </li>
         <li>
@@ -161,8 +245,8 @@ export default function Page() {
               target="_blank"
               href="https://www.neillytan.com/"
             >
-              <ArrowIcon />
-              <p className="ml-2 h-7">Neilly Tan</p>
+                <LeftPointingTriangleIcon />
+                <p className="ml-2 h-7">Neilly Tan</p>
             </a>
         </li>
         <li>
@@ -172,8 +256,8 @@ export default function Page() {
               target="_blank"
               href="https://bogeumchoi.com/"
             >
-              <ArrowIcon />
-              <p className="ml-2 h-7">Bogeum Choi</p>
+                <LeftPointingTriangleIcon />
+                <p className="ml-2 h-7">Bogeum Choi</p>
             </a>
         </li>
         <li>
@@ -183,8 +267,8 @@ export default function Page() {
               target="_blank"
               href="https://willsutherland.com/"
             >
-              <ArrowIcon />
-              <p className="ml-2 h-7">Will Sutherland</p>
+                <LeftPointingTriangleIcon />
+                <p className="ml-2 h-7">Will Sutherland</p>
             </a>
         </li>
       </ul>
