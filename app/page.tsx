@@ -209,10 +209,10 @@ export default function Page() {
             </li>
           </ul> 
         <br/>
-
       </ul>
 
-      <h2 className="mb-2 text-2xl font-semibold tracking-tighter">
+
+      <h2 className="mt-4 mb-2 text-2xl font-semibold tracking-tighter">
         check out some of my friends
       </h2>
       <ul>
