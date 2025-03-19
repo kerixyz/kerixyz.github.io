@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation';
 import { CustomMDX } from 'app/components/mdx';
-import { formatDate, getNotebookPosts } from 'app/notebook/utils';
+import { formatDate, getCodebookPosts } from 'app/codebook/utils';
 import { baseUrl } from 'app/sitemap';
 
 export async function generateStaticParams() {
-  let posts = getNotebookPosts();
+  let posts = getCodebookPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 }
 
 export function generateMetadata({ params }) {
-  let post = getNotebookPosts().find((post) => post.slug === params.slug);
+  let post = getCodebookPosts().find((post) => post.slug === params.slug);
   if (!post) {
     return;
   }
@@ -35,7 +35,7 @@ export function generateMetadata({ params }) {
       description,
       type: 'article',
       publishedTime,
-      url: `${baseUrl}/notebook/${post.slug}`,
+      url: `${baseUrl}/codebook/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -51,8 +51,8 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function NotebookPost({ params }) {
-  let post = getNotebookPosts().find((post) => post.slug === params.slug);
+export default function codebookPost({ params }) {
+  let post = getCodebookPosts().find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();
@@ -74,7 +74,7 @@ export default function NotebookPost({ params }) {
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/notebook/${post.slug}`,
+            url: `${baseUrl}/codebook/${post.slug}`,
             author: {
               '@type': 'Person',
               name: 'My Portfolio',

@@ -55,8 +55,8 @@ function getMDXData(dir: string) {
   });
 }
 
-export function getNotebookPosts() {
-  return getMDXData(path.join(process.cwd(), 'app', 'notebook', 'notes'));
+export function getCodebookPosts() {
+  return getMDXData(path.join(process.cwd(), 'app', 'codebook', 'codes'));
 }
 
 export function formatDate(date: string, includeRelative = false) {
