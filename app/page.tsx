@@ -111,6 +111,17 @@ export default function Page() {
             <p className="ml-2 h-7">linkedin</p>
           </a>
         </li>
+        <li>
+          <a
+            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://www.github.com/kerixyz"
+          >
+            <TriangleIcon />
+            <p className="ml-2 h-7">github</p>
+          </a>
+        </li>
       </ul>
 
       <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
