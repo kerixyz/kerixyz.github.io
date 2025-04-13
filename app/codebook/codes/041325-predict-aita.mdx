@@ -4,28 +4,10 @@ publishedAt: "2025-04-13"
 summary: "iPython Notebook for predicting AITA results based on 'title' using trees"
 ---
 
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-
-from sklearn.preprocessing import LabelEncoder
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier, BaggingClassifier, GradientBoostingClassifier
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_curve, auc, classification_report
-from sklearn.metrics import ConfusionMatrixDisplay
-from sklearn.model_selection import cross_val_score, train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
-```
-
 ## Data Cleaning
 
 ```python
-# df_smol = pd.read_csv('aita778.csv')
 df_big = pd.read_csv('aita7780.csv')
-```
-
-```python
 print(df_big.isnull().sum())
 ```
 
@@ -42,6 +24,8 @@ le = LabelEncoder()
 df_big['flair_num'] = le.fit_transform(df_big['flair'])
 ```
 
+
+## Train / Test Split 
 ```python
 #split into test / train 
 
@@ -51,17 +35,12 @@ y = df_big['flair_num']
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=17)
 ```
 
-```python
-df_big['title'][2]
-
-```
+`df_big['title'][2]`
     'AITA for preferring that my uncle teach me to drive than my dad and refusing to tell my dad why?'
 
 ```python
 tfidf = TfidfVectorizer(max_features=5000)
-```
 
-```python
 X_train_tfidf = tfidf.fit_transform(X_train)
 X_test_tfidf = tfidf.transform(X_test)
 ```
@@ -69,26 +48,18 @@ X_test_tfidf = tfidf.transform(X_test)
 ```python
 dt_model = DecisionTreeClassifier(random_state=17, max_depth=10)
 dt_model.fit(X_train_tfidf, y_train)
-
 y_pred_dt = dt_model.predict(X_test_tfidf)
-```
 
-```python
 temp = dt_model.fit(X_train_tfidf, y_train)
-
 fig = plt.figure(figsize=(25,20))
 _ = tree.plot_tree(temp,
                    filled=True)
 ```
 
-```python
-print('Decision Tree Accuracy:',accuracy_score(y_test,y_pred_dt))
-```
+`print('Decision Tree Accuracy:',accuracy_score(y_test,y_pred_dt))`
     0.7172236503856041
 
-```python
-print(classification_report(y_test,y_pred_dt))
-```
+`print(classification_report(y_test,y_pred_dt))`
 
                   precision    recall  f1-score   support
     
@@ -227,7 +198,7 @@ plt.xticks(rotation=45)
 plt.show()
 ```
 
-![png](pred_files/pred_20_0.png)
+![png](/pred_files/pred_20_0.png)
 
 ```python
 metrics_df['F1-Score'].plot(kind='bar', color=['blue', 'green', 'orange', 'purple'], figsize=(8, 6))
@@ -239,7 +210,7 @@ plt.show()
 
 ```
 
-![png](pred_files/pred_21_0.png)
+![png](/pred_files/pred_21_0.png)
 
 ```python
 models = [("Decision Tree", dt_model), 
@@ -254,13 +225,13 @@ for name, model in models:
 
 ```
     
-![png](pred_files/pred_22_0.png)
+![png](/pred_files/pred_22_0.png)
     
-![png](pred_files/pred_22_1.png)
+![png](/pred_files/pred_22_1.png)
     
-![png](pred_files/pred_22_2.png)
+![png](/pred_files/pred_22_2.png)
     
-![png](pred_files/pred_22_3.png)
+![png](/pred_files/pred_22_3.png)
     
 
 ```python
@@ -282,7 +253,7 @@ plt.xticks(rotation=45)
 plt.show()
 ```
 
-![png](pred_files/pred_24_0.png)
+![png](/pred_files/pred_24_0.png)
     
 ```python
 
