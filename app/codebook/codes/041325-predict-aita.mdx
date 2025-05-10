@@ -4,9 +4,45 @@ publishedAt: "2025-04-13"
 summary: "iPython Notebook for predicting AITA results based on 'title' using trees"
 ---
 
-## Data Cleaning
+## Problem
+The subreddit r/AmITheAsshole has thousands of posts, each judged by the community.
+Can we predict the post’s outcome (“YTA”, “NTA”, etc.) based only on the title text?
+This problem presents a classic multi-class text classification task, ideal for exploring tree-based ML models and TF-IDF vectorization.
 
-Code here: https://github.com/kerixyz/pred-aita/blob/main/pred.md
+## Dataset
+- Preprocessed titles using TF-IDF (5000 features)
+- Trained Decision Tree, Random Forest, Bagging, and Gradient Boosting classifiers
+- Evaluated using accuracy, F1-score, confusion matrix, and CV scoring
+
+## Approach
+1. Preprocessing
+    - Used LabelEncoder to convert outcome labels into numeric classes
+    - Applied TF-IDF vectorization (max_features=5000) on titles
+
+2. Models Compared
+    - Decision Tree
+    - Random Forest
+    - Gradient Boosting
+    - Bagging (Base Tree: Depth=5)
+
+Each model was evaluated on:
+    - Accuracy
+    - Precision, Recall, F1-Score (Weighted)
+    - Confusion Matrix
+    - 5-fold Cross-Validation Score
+
+## Results Summary
+| Model                 | Accuracy | Precision | Recall   | F1-Score |
+| --------------------- | -------- | --------- | -------- | -------- |
+| **Gradient Boosting** | **0.86** | **0.88**  | **0.86** | **0.83** |
+| Decision Tree         | 0.72     | 0.74      | 0.72     | 0.64     |
+| Bagging               | 0.70     | 0.76      | 0.70     | 0.60     |
+| Random Forest         | 0.67     | 0.68      | 0.67     | 0.55     |
+
+
+## Code Below
+
+Github https://github.com/kerixyz/pred-aita/blob/main/pred.md
 
 ```python
 df_big = pd.read_csv('aita7780.csv')
@@ -60,21 +96,7 @@ _ = tree.plot_tree(temp,
 ```
 
 `print('Decision Tree Accuracy:',accuracy_score(y_test,y_pred_dt))`
-    0.7172236503856041
-
-`print(classification_report(y_test,y_pred_dt))`
-
-                  precision    recall  f1-score   support
-    
-               0       1.00      0.19      0.32       280
-               1       0.76      0.17      0.28        95
-               2       0.83      0.12      0.22        81
-               3       0.00      0.00      0.00        58
-               4       0.71      1.00      0.83      1042
-    
-        accuracy                           0.72      1556
-       macro avg       0.66      0.30      0.33      1556
-    weighted avg       0.74      0.72      0.64      1556
+0.7172236503856041
 
 ```python
 rf_model = RandomForestClassifier(random_state=17, max_depth=10, n_estimators=100)
@@ -82,23 +104,9 @@ rf_model.fit(X_train_tfidf, y_train)
 
 y_pred_rf = rf_model.predict(X_test_tfidf)
 print("Random Forest Accuracy:", accuracy_score(y_test, y_pred_rf))
-print(classification_report(y_test, y_pred_rf))
-
 ```
-
-    Random Forest Accuracy: 0.6735218508997429
-                  precision    recall  f1-score   support
-    
-               0       1.00      0.01      0.02       280
-               1       0.00      0.00      0.00        95
-               2       1.00      0.04      0.07        81
-               3       0.00      0.00      0.00        58
-               4       0.67      1.00      0.80      1042
-    
-        accuracy                           0.67      1556
-       macro avg       0.53      0.21      0.18      1556
-    weighted avg       0.68      0.67      0.55      1556
-    
+Random Forest Accuracy: 0.6735218508997429
+                
 
 ```python
 base_tree = DecisionTreeClassifier(max_depth=5, random_state=17)
@@ -107,23 +115,10 @@ bagging_model.fit(X_train_tfidf, y_train)
 
 y_pred_bagging = bagging_model.predict(X_test_tfidf)
 print("Bagging Accuracy:", accuracy_score(y_test, y_pred_bagging))
-print(classification_report(y_test, y_pred_bagging))
 
 ```
-
-    Bagging Accuracy: 0.7011568123393316
-                  precision    recall  f1-score   support
-    
-               0       1.00      0.12      0.21       280
-               1       1.00      0.07      0.14        95
-               2       1.00      0.11      0.20        81
-               3       0.00      0.00      0.00        58
-               4       0.69      1.00      0.82      1042
-    
-        accuracy                           0.70      1556
-       macro avg       0.74      0.26      0.27      1556
-    weighted avg       0.76      0.70      0.60      1556
-
+Bagging Accuracy: 0.7011568123393316
+                 
 
 ```python
 gb_model = GradientBoostingClassifier(random_state=17)
@@ -131,25 +126,12 @@ gb_model.fit(X_train_tfidf, y_train)
 
 y_pred_gb = gb_model.predict(X_test_tfidf)
 print("Gradient Boosting Accuracy:", accuracy_score(y_test, y_pred_gb))
-print(classification_report(y_test, y_pred_gb))
 
 ```
-
-    Gradient Boosting Accuracy: 0.859254498714653
-                  precision    recall  f1-score   support
-    
-               0       1.00      0.31      0.48       280
-               1       1.00      0.77      0.87        95
-               2       1.00      0.94      0.97        81
-               3       1.00      1.00      1.00        58
-               4       0.83      1.00      0.90      1042
-    
-        accuracy                           0.86      1556
-       macro avg       0.97      0.80      0.84      1556
-    weighted avg       0.88      0.86      0.83      1556
-
+Gradient Boosting Accuracy: 0.859254498714653
+ 
 ```python
-##Collect Merics for cCOmparison 
+##Collect Merics for Cmparison 
 def eval_model(model, X_test, y_test):
     y_pred = model.predict(X_test)
     return{
@@ -173,23 +155,13 @@ metrics = {
 metrics_df = pd.DataFrame(metrics)
 print(metrics_df)
 ```
+| Metric     | Decision Tree  | Random Forest  | Gradient Boosting  | Bagging   |
+|------------|----------------|----------------|--------------------|-----------|
+| Accuracy   | 0.717224       | 0.673522       | 0.859254           | 0.701157  |
+| Precision  | 0.742257       | 0.682193       | 0.883698           | 0.756093  |
+| Recall     | 0.717224       | 0.673522       | 0.859254           | 0.701157  |
+| F1-Score   | 0.638219       | 0.545953       | 0.832780           | 0.604238  |
 
-               Decision Tree  Random Forest  Gradient Boosting   Bagging
-    Accuracy        0.717224       0.673522           0.859254  0.701157
-    Precision       0.742257       0.682193           0.883698  0.756093
-    Recall          0.717224       0.673522           0.859254  0.701157
-    F1-Score        0.638219       0.545953           0.832780  0.604238
-
-```python
-metrics_df = metrics_df.T
-print(metrics_df)
-```
-
-                       Accuracy  Precision    Recall  F1-Score
-    Decision Tree      0.717224   0.742257  0.717224  0.638219
-    Random Forest      0.673522   0.682193  0.673522  0.545953
-    Gradient Boosting  0.859254   0.883698  0.859254  0.832780
-    Bagging            0.701157   0.756093  0.701157  0.604238
 
 ```python
 metrics_df['Accuracy'].plot(kind='bar', color=['blue', 'green', 'orange', 'purple'], figsize=(8, 6))
