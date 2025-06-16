@@ -130,15 +130,27 @@ export default function Page() {
       <ul>
         <li><b>Live Streamers and Feedback</b></li>
           <ul>
-          <li>
+            <li>
                 <a
                   className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
                   rel="noopener noreferrer"
                   target="_blank"
-                  href="https://streamfeed.xyz"
+                  href=""
                 >
                   <ArrowIcon />
-                  <p className="ml-2 h-7">Developing Constructive Feedback for Live Streamers</p>
+                  <p className="ml-2 h-7">Post-Stream Analysis of Live Stream Chat (In Submission)</p>
+                </a>
+              </li>
+            <li></li>
+            <li>
+                <a
+                  className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href=""
+                >
+                  <ArrowIcon />
+                  <p className="ml-2 h-7">Developing Constructive Feedback for Live Streamers (Under Review)</p>
                 </a>
               </li>
             <li>
