@@ -138,7 +138,7 @@ export default function Page() {
                   href=""
                 >
                   <ArrowIcon />
-                  <p className="ml-2 h-7">Post-Stream Analysis of Live Stream Chat (In Submission)</p>
+                  <p className="ml-2 h-7">Post-Stream Analysis of Live Stream Chat (Under Review)</p>
                 </a>
               </li>
             <li></li>
@@ -206,7 +206,7 @@ export default function Page() {
           </ul>
         <br/>
 
-        <li><b>Future of Work and Hybrid Experiences</b></li>
+        {/* <li><b>Future of Work and Hybrid Experiences</b></li>
           <ul>
             <li>
               <a
@@ -231,12 +231,12 @@ export default function Page() {
               </a>
             </li>
           </ul> 
-        <br/>
+        <br/> */}
       </ul>
 
 
       <h2 className="mt-4 mb-2 text-2xl font-semibold tracking-tighter">
-        check out some of my friends
+        check out my friends' research
       </h2>
       <ul>
         <li>
