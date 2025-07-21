@@ -63,7 +63,8 @@ export default function Page() {
         keri mallari
       </h1>
       <p className="mb-2">
-        {`I’m a research and data scientist with expertise in analyzing digital media and live-streaming user behavior. My work spans across designing experiments, conducting statistical analysis, analyzing, training and optimizing models, and developing data-driven solutions to improve user experiences while creating inclusive online spaces. Additionally, I’m a trained software engineer with experience in building and launching web applications using React, Next.js, Express, Node.js, and PostgreSQL.`}
+        {`I’m a research and data scientist with expertise in analyzing digital media and live-streaming user behavior. My work spans across designing experiments, conducting statistical analysis, analyzing, training and optimizing models, and developing data-driven solutions to improve user experiences while creating inclusive online spaces.`}
+         {/* Additionally, I’m a trained software engineer with experience in building and launching web applications using React, Next.js, Express, Node.js, and PostgreSQL. */}
       </p>
 
       <ul className="font-sm mt-2 mb-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
