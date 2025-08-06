@@ -73,7 +73,7 @@ export default function Page() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="mailto:kmallari@uw.edu"
+            href="mailto:keri.xyz@gmail.com"
           >
             <TriangleIcon />
             <p className="ml-2 h-7">email </p>
@@ -139,7 +139,7 @@ export default function Page() {
                   href=""
                 >
                   <ArrowIcon />
-                  <p className="ml-2 h-7">Post-Stream Analysis of Live Stream Chat (Under Review)</p>
+                  <p className="ml-2 h-7">Post-Stream Analysis of Live Stream Chat</p>
                 </a>
               </li>
             <li></li>
@@ -151,7 +151,7 @@ export default function Page() {
                   href=""
                 >
                   <ArrowIcon />
-                  <p className="ml-2 h-7">Developing Constructive Feedback for Live Streamers (Under Review)</p>
+                  <p className="ml-2 h-7">Developing Constructive Feedback for Live Streamers</p>
                 </a>
               </li>
             <li>
