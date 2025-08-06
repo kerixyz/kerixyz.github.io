@@ -64,6 +64,7 @@ export default function Page() {
       </h1>
       <p className="mb-2">
         {`I’m a research and data scientist with expertise in analyzing digital media and live-streaming user behavior. My work spans across designing experiments, conducting statistical analysis, analyzing, training and optimizing models, and developing data-driven solutions to improve user experiences while creating inclusive online spaces.`}
+        {`Currently, I'm a Data Scientist Fellow at Tech Impact, a nonprofit supporting state agencies and other nonprofits with machine learning, predictive modeling, and causal inference for social impact `}
          {/* Additionally, I’m a trained software engineer with experience in building and launching web applications using React, Next.js, Express, Node.js, and PostgreSQL. */}
       </p>
 
@@ -129,7 +130,7 @@ export default function Page() {
         research
       </h2>
       <ul>
-        <li><b>Live Streamers and Feedback</b></li>
+        <li><b>Live Streaming and Feedback</b></li>
           <ul>
             <li>
                 <a
@@ -201,7 +202,7 @@ export default function Page() {
                 href="https://dl.acm.org/doi/abs/10.1145/3313831.3376257"
               >
                 <ArrowIcon />
-                <p className="ml-2 h-7">Examining how Race Presentation Impacts Human Judgement of Recidivism</p>
+                <p className="ml-2 h-7">Race Presentation on Human Judgement of Recidivism</p>
               </a>
             </li>
           </ul>
