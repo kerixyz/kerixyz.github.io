@@ -64,6 +64,7 @@ export default function Page() {
       </h1>
       <p className="mb-2">
         {`I’m a research and data scientist with expertise in analyzing digital media and live-streaming user behavior. My work spans across designing experiments, conducting statistical analysis, analyzing, training and optimizing models, and developing data-driven solutions to improve user experiences while creating inclusive online spaces.`}
+        <br/>
         {`Currently, I'm a Data Scientist Fellow at Tech Impact, a nonprofit supporting state agencies and other nonprofits with machine learning, predictive modeling, and causal inference for social impact `}
          {/* Additionally, I’m a trained software engineer with experience in building and launching web applications using React, Next.js, Express, Node.js, and PostgreSQL. */}
       </p>
@@ -122,6 +123,17 @@ export default function Page() {
           >
             <TriangleIcon />
             <p className="ml-2 h-7">github</p>
+          </a>
+        </li>
+        <li>
+          <a
+            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://letterboxd.com/kerixyz/"
+          >
+            <TriangleIcon />
+            <p className="ml-2 h-7">letterboxd</p>
           </a>
         </li>
       </ul>
