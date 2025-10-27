@@ -65,7 +65,9 @@ export default function Page() {
       <p className="mb-2">
         {`I’m a research and data scientist with expertise in analyzing digital media and live-streaming user behavior. My work spans across designing experiments, conducting statistical analysis, analyzing, training and optimizing models, and developing data-driven solutions to improve user experiences while creating inclusive online spaces.`}
         <br/>
-        {`Currently, I'm a Data Scientist Fellow at Tech Impact, a nonprofit supporting state agencies and other nonprofits with machine learning, predictive modeling, and causal inference for social impact `}
+        {`Currently, I'm a Data Science Fellow at Tech Impact, a nonprofit supporting state agencies and other nonprofits with machine learning, predictive modeling, and causal inference for social impact.`}
+        <br/>
+        {`Right now, I'm thinking about economic mobility`}
          {/* Additionally, I’m a trained software engineer with experience in building and launching web applications using React, Next.js, Express, Node.js, and PostgreSQL. */}
       </p>
 
