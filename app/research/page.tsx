@@ -79,15 +79,15 @@ export default function Page() {
         <ul>
           <ResearchPaper
             title="Post-Stream Analysis of Live Stream Chat"
-            description="[Add 1-2 sentence description here]"
+            description="Built prototypes of message-level and persona-level analytics of a streamer's chat to help them revisit missed messages and support the process of reflection for both streamers and viewers."
           />
           <ResearchPaper
             title="Developing Constructive Feedback for Live Streamers"
-            description="[Add 1-2 sentence description here]"
+            description="Developed a system that solicits constructive feedback on behalf of live streamers from their community members and provides output in a dashboard."
           />
           <ResearchPaper
             title="Analytics Needs of Video Game Streamers"
-            description="[Add 1-2 sentence description here]"
+            description="Conducted interview studies with streamers from Twitch and Mixer to understand the information gap in their streaming process and identify their analytics needs."
             link="https://dl.acm.org/doi/abs/10.1145/3411764.3445320"
           />
         </ul>
@@ -98,7 +98,7 @@ export default function Page() {
         <ul>
           <ResearchPaper
             title="Human-LM Alignment"
-            description="[Add 1-2 sentence description here]"
+            description="Tested popular large language models on high-stakes decision making tasks like recidivism prediction, analyzing their agreement with human predictions and existing models. Found that providing different types of information, including distractor information like photos, can significantly influence LM decisions and that current LMs are not the right tools for these types of tasks."
             link="https://arxiv.org/pdf/2410.15471"
           />
           <ResearchPaper
