@@ -69,7 +69,7 @@ export default function Page() {
         <br/> <br/>
         {`In my free time, I have the `}
         <a
-          href="https://www.instagram.com/meowmeowmeowmeow/"
+          href="https://instagram.com/kumoxyz_"
           target="_blank"
           rel="noopener noreferrer"
           className="underline transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
