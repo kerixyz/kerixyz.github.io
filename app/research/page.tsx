@@ -103,12 +103,12 @@ export default function Page() {
           />
           <ResearchPaper
             title="Advancing Human-AI Complementarity"
-            description="[Add 1-2 sentence description here]"
+            description="Examined how users with varying levels of expertise interact with AI recommendations in a blood vessel labeling task. Found that user base expertise, complementary AI tuning to address users' strengths and weaknesses, and users' perception of AI performance all significantly impact Human-AI team performance."
             link="https://dl.acm.org/doi/abs/10.1145/3534561"
           />
           <ResearchPaper
             title="Race Presentation on Human Judgement of Recidivism"
-            description="[Add 1-2 sentence description here]"
+            description="Explored how the saliency of race information presentation influences users' recidivism judgements. Found that adding photos to race labels had a significant impact on predictions for users who identified as female, with black defendants being less likely to be predicted to recidivate compared to white defendants."
             link="https://dl.acm.org/doi/abs/10.1145/3313831.3376257"
           />
         </ul>
@@ -118,13 +118,8 @@ export default function Page() {
         <h2 className="text-xl font-semibold mb-4">Future of Work and Hybrid Experiences</h2>
         <ul>
           <ResearchPaper
-            title="Hybrid Meeting Prototype"
-            description="[Add 1-2 sentence description here]"
-            link="https://www.youtube.com/watch?v=Zl5M5e1fxIA"
-          />
-          <ResearchPaper
-            title="Perspectives Paper"
-            description="[Add 1-2 sentence description here]"
+            title="Perspectives"
+            description="Designed and evaluated a novel hybrid meeting system that digitally composites everyone into a virtual room where each person has a unique but spatially consistent viewpoint. Found that this approach supports natural interactions, creates a strong sense of co-presence, and reduces cognitive load compared to commercial alternatives like Gallery, Together Mode, and Front Row."
             link="https://www.microsoft.com/en-us/research/uploads/prod/2023/10/2023-CSCW-Perspectives.pdf"
           />
         </ul>
