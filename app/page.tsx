@@ -142,112 +142,16 @@ export default function Page() {
       <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
         research
       </h2>
-      <ul>
-        <li><b>Live Streaming and Feedback</b></li>
-          <ul>
-            <li>
-                <a
-                  className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href=""
-                >
-                  <ArrowIcon />
-                  <p className="ml-2 h-7">Post-Stream Analysis of Live Stream Chat</p>
-                </a>
-              </li>
-            <li></li>
-            <li>
-                <a
-                  className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href=""
-                >
-                  <ArrowIcon />
-                  <p className="ml-2 h-7">Developing Constructive Feedback for Live Streamers</p>
-                </a>
-              </li>
-            <li>
-                <a
-                  className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://dl.acm.org/doi/abs/10.1145/3411764.3445320"
-                >
-                  <ArrowIcon />
-                  <p className="ml-2 h-7">Analytics Needs of Video Game Streamers</p>
-                </a>
-              </li>
-          </ul>
-          <br/>
-
-        <li><b>Human-AI Interaction</b></li>
-          <ul>
-            <li>
-              <a
-                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://arxiv.org/pdf/2410.15471"
-              >
-                <ArrowIcon />
-                <p className="ml-2 h-7">Human-LM Alignment</p>
-              </a>
-            </li>
-            <li>
-              <a
-                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://dl.acm.org/doi/abs/10.1145/3534561"
-              >
-                <ArrowIcon />
-                <p className="ml-2 h-7">Advancing Human-AI Complementarity</p>
-              </a>
-            </li>
-
-            <li>
-              <a
-                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://dl.acm.org/doi/abs/10.1145/3313831.3376257"
-              >
-                <ArrowIcon />
-                <p className="ml-2 h-7">Race Presentation on Human Judgement of Recidivism</p>
-              </a>
-            </li>
-          </ul>
-        <br/>
-
-        {/* <li><b>Future of Work and Hybrid Experiences</b></li>
-          <ul>
-            <li>
-              <a
-                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.youtube.com/watch?v=Zl5M5e1fxIA"
-              >
-                <ArrowIcon />
-                <p className="ml-2 h-7">Hybrid Meeting Prototype</p>
-              </a>
-            </li>
-            <li>
-              <a
-                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.microsoft.com/en-us/research/uploads/prod/2023/10/2023-CSCW-Perspectives.pdf"
-              >
-                <ArrowIcon />
-                <p className="ml-2 h-7">Perspectives Paper</p>
-              </a>
-            </li>
-          </ul> 
-        <br/> */}
-      </ul>
+      <p className="mb-4">
+        My research spans live streaming feedback systems, human-AI interaction, and hybrid work experiences.
+        {' '}
+        <a
+          href="/research"
+          className="underline transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+        >
+          View all publications →
+        </a>
+      </p>
 
 
       <h2 className="mt-4 mb-2 text-2xl font-semibold tracking-tighter">
