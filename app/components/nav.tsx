@@ -11,7 +11,7 @@ const navItems = {
     name: 'projects'
   },
   '/blog': {
-    name: 'personal',
+    name: 'blog',
   },
   // 'https://vercel.com/templates/next.js/portfolio-starter-kit': {
   //   name: 'deploy',

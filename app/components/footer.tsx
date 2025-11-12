@@ -35,7 +35,7 @@ export default function Footer() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://keri.xyz/Mallari_CV.pdf"
+            href="https://keri.xyz/kmallari-resume.pdf"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">cv</p>
