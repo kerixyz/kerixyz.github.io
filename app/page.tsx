@@ -63,18 +63,10 @@ export default function Page() {
         keri mallari
       </h1>
       <p className="mb-2">
-        {`Currently, I'm a Data Science Fellow at Tech Impact, a nonprofit where I build tools and models to support state agencies and other nonprofits using machine learning, causal inference, and predictive analytics. I also support research efforts in the lab by authoring and supporting grant applications.`}
-        <br/> <br/>
-        {`I recently received my PhD from the University of Washington, where my dissertation focused on developing feedback systems for live streamers using large language models. I'm an affiliate of the `}
-        <a
-          href="https://www.kishonnagray.com/lab-staff"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-        >
-          Intersectional Tech Lab
-        </a>
-        {` at the University of Michigan. My research interests vary widely—from economic mobility to the impact of generative AI in online communities and esports—but I'm broadly interested in understanding how people interact with technology and using data to create more inclusive and effective digital experiences.`}
+        {`I currently work in data and analytics at JP Morgan Chase.`}
+        <br>
+        
+        {`Previously, I was a Data Scientist at Tech Impact, a nonprofit where I developed machine learning and causal inference models for state agencies and other nonprofits, and contributed to research and grant initiatives. I received my PhD from the University of Washington, where my dissertation focused on designing feedback systems for live streamers using large language models. My research interests broadly center on how people interact with technology and how data can be used to create more inclusive and effective digital experiences.`}
         <br/> <br/>
         {`In my free time, I have the `}
         <a
