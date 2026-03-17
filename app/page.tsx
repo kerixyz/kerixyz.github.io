@@ -63,7 +63,11 @@ export default function Page() {
         keri mallari
       </h1>
       <p className="mb-2">
-        {`I currently work in data and analytics at JP Morgan Chase. Previously, I was a Data Scientist at Tech Impact, a nonprofit where I developed machine learning and causal inference models for state agencies and other nonprofits, and contributed to research and grant initiatives. I received my PhD from the University of Washington, where my dissertation focused on designing feedback systems for live streamers using large language models. My research interests broadly center on how people interact with technology and how data can be used to create more inclusive and effective digital experiences.`}
+        {`I currently work in data and analytics at JP Morgan Chase. `}
+        <br/> <br/>
+        {`Previously, I was a Data Scientist at Tech Impact, a nonprofit where I developed machine learning and causal inference models for state agencies and other nonprofits, and contributed to research and grant initiatives. `}
+        <br/> 
+        {`I received my PhD from the University of Washington, where my dissertation focused on designing feedback systems for live streamers using large language models. My research interests broadly center on how people interact with technology and how data can be used to create more inclusive and effective digital experiences.`}
         <br/> <br/>
         {`In my free time, I have the `}
         <a
