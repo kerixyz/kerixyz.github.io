@@ -63,7 +63,7 @@ export default function Page() {
         keri mallari
       </h1>
       <p className="mb-2">
-        {`I currently work in data and analytics at JP Morgan Chase. `}
+        {`I currently work in data and analytics at JPMorgan Chase. `}
         <br/> <br/>
         {`Previously, I was a Data Scientist at Tech Impact, a nonprofit where I developed machine learning and causal inference models for state agencies and other nonprofits, and contributed to research and grant initiatives. `}
         <br/> 
