@@ -80,10 +80,14 @@ export default function Page() {
           <ResearchPaper
             title="Post-Stream Analysis of Live Stream Chat"
             description="Built prototypes of message-level and persona-level analytics of a streamer's chat to help them revisit missed messages and support the process of reflection for both streamers and viewers."
+            link="https://www.keri.xyz/hcii26-postchat.pdf"
+
           />
           <ResearchPaper
             title="Developing Constructive Feedback for Live Streamers"
             description="Developed a system that solicits constructive feedback on behalf of live streamers from their community members and provides output in a dashboard."
+            link="https://www.keri.xyz/hcii26-streamfeed.pdf"
+
           />
           <ResearchPaper
             title="Analytics Needs of Video Game Streamers"
