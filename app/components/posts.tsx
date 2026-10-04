@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getNotes } from 'app/notes/utils'
+import { Placeholder } from 'app/components/placeholder'
 
 export function NotesList() {
   let notes = getNotes().sort(
@@ -29,13 +30,15 @@ export function NotesList() {
                 className="group flex items-center gap-4"
               >
                 <div
-                  className="shrink-0 w-[100px] h-[50px] border border-neutral-800 dark:border-neutral-300 bg-neutral-200 dark:bg-neutral-800 bg-cover bg-center group-hover:border-b-2"
+                  className="shrink-0 w-[100px] h-[50px] overflow-hidden border border-neutral-800 dark:border-neutral-300 bg-cover bg-center group-hover:border-b-2"
                   style={
                     note.metadata.image
                       ? { backgroundImage: `url(${note.metadata.image})` }
                       : undefined
                   }
-                />
+                >
+                  {!note.metadata.image && <Placeholder seed={note.slug} />}
+                </div>
                 <span className="font-mono text-sm text-neutral-800 dark:text-neutral-200 group-hover:underline">
                   {note.metadata.title}
                 </span>
