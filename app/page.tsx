@@ -1,4 +1,4 @@
-import { BlogPosts } from 'app/components/posts'
+import { NotesList } from 'app/components/posts'
 import { ListFormat } from 'typescript'
 
 function ArrowIcon() {
@@ -60,14 +60,14 @@ export default function Page() {
   return (
     <section>
       <h1 className="mb-4 text-2xl font-semibold tracking-tighter">
-        keri mallari
+        keri mallari, phd
       </h1>
       <p className="mb-2">
         {`I currently work in data and analytics at JPMorgan Chase. `}
         <br/> <br/>
         {`Previously, I was a Data Scientist at Tech Impact, a nonprofit where I developed machine learning and causal inference models for state agencies and other nonprofits, and contributed to research and grant initiatives. `}
         <br/> 
-        {`I received my PhD from the University of Washington, where my dissertation focused on designing feedback systems for live streamers using large language models. My research interests broadly center on how people interact with technology and how data can be used to create more inclusive and effective digital experiences.`}
+        {`I received my PhD from the University of Washington, where my dissertation focused on developing feedback systems for live streamers using large language models. My research interests broadly center on how people interact with technology and how data can be used to create more inclusive and effective digital experiences.`}
         <br/> <br/>
         {`In my free time, I have the `}
         <a
@@ -91,28 +91,6 @@ export default function Page() {
       </p>
 
       <ul className="font-sm mt-2 mb-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="mailto:keri.xyz@gmail.com"
-          >
-            <TriangleIcon />
-            <p className="ml-2 h-7">email </p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://keri.xyz/kmallari-resume.pdf"
-          >
-            <TriangleIcon />
-            <p className="ml-2 h-7">cv</p>
-          </a>
-        </li>
         <li>
           <a
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"

@@ -1,20 +1,20 @@
-import { notFound } from 'next/navigation';
-import { CustomMDX } from 'app/components/mdx';
-import { formatDate, getCodebookPosts } from 'app/codebook/utils';
-import { baseUrl } from 'app/sitemap';
+import { notFound } from 'next/navigation'
+import { CustomMDX } from 'app/components/mdx'
+import { formatDate, getNotes } from 'app/notes/utils'
+import { baseUrl } from 'app/sitemap'
 
 export async function generateStaticParams() {
-  let posts = getCodebookPosts();
+  let posts = getNotes()
 
   return posts.map((post) => ({
     slug: post.slug,
-  }));
+  }))
 }
 
 export function generateMetadata({ params }) {
-  let post = getCodebookPosts().find((post) => post.slug === params.slug);
+  let post = getNotes().find((post) => post.slug === params.slug)
   if (!post) {
-    return;
+    return
   }
 
   let {
@@ -22,10 +22,8 @@ export function generateMetadata({ params }) {
     publishedAt: publishedTime,
     summary: description,
     image,
-  } = post.metadata;
-  let ogImage = image
-    ? image
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+  } = post.metadata
+  let ogImage = image ? image : `${baseUrl}/og?title=${encodeURIComponent(title)}`
 
   return {
     title,
@@ -35,7 +33,7 @@ export function generateMetadata({ params }) {
       description,
       type: 'article',
       publishedTime,
-      url: `${baseUrl}/codebook/${post.slug}`,
+      url: `${baseUrl}/notes/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -48,14 +46,14 @@ export function generateMetadata({ params }) {
       description,
       images: [ogImage],
     },
-  };
+  }
 }
 
-export default function codebookPost({ params }) {
-  let post = getCodebookPosts().find((post) => post.slug === params.slug);
+export default function Note({ params }) {
+  let post = getNotes().find((post) => post.slug === params.slug)
 
   if (!post) {
-    notFound();
+    notFound()
   }
 
   return (
@@ -74,7 +72,7 @@ export default function codebookPost({ params }) {
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/codebook/${post.slug}`,
+            url: `${baseUrl}/notes/${post.slug}`,
             author: {
               '@type': 'Person',
               name: 'My Portfolio',
@@ -94,5 +92,5 @@ export default function codebookPost({ params }) {
         <CustomMDX source={post.content} />
       </article>
     </section>
-  );
+  )
 }

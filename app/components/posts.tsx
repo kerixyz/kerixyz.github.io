@@ -1,36 +1,49 @@
 import Link from 'next/link'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
+import { getNotes } from 'app/notes/utils'
 
-export function BlogPosts() {
-  let allBlogs = getBlogPosts()
+export function NotesList() {
+  let notes = getNotes().sort(
+    (a, b) =>
+      new Date(b.metadata.publishedAt).getTime() -
+      new Date(a.metadata.publishedAt).getTime()
+  )
+
+  let byYear = new Map<string, typeof notes>()
+  for (let note of notes) {
+    let year = note.metadata.publishedAt.slice(0, 4)
+    byYear.set(year, [...(byYear.get(year) ?? []), note])
+  }
 
   return (
-    <div>
-      {allBlogs
-        .sort((a, b) => {
-          if (
-            new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
-          ) {
-            return -1
-          }
-          return 1
-        })
-        .map((post) => (
-          <Link
-            key={post.slug}
-            className="flex flex-col space-y-1 mb-4"
-            href={`/blog/${post.slug}`}
-          >
-            <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[120px] tabular-nums">
-                {formatDate(post.metadata.publishedAt, false)}
-              </p>
-              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
-                {post.metadata.title}
-              </p>
-            </div>
-          </Link>
-        ))}
+    <div className="space-y-10">
+      {Array.from(byYear.entries()).map(([year, items]) => (
+        <div key={year}>
+          <h2 className="text-xs font-mono text-neutral-500 tabular-nums mb-3">
+            {year}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+            {items.map((note) => (
+              <Link
+                key={note.slug}
+                href={`/notes/${note.slug}`}
+                className="group flex items-center gap-4"
+              >
+                <div
+                  className="shrink-0 w-[100px] h-[50px] border border-neutral-800 dark:border-neutral-300 bg-neutral-200 dark:bg-neutral-800 bg-cover bg-center group-hover:border-b-2"
+                  style={
+                    note.metadata.image
+                      ? { backgroundImage: `url(${note.metadata.image})` }
+                      : undefined
+                  }
+                />
+                <span className="font-mono text-sm text-neutral-800 dark:text-neutral-200 group-hover:underline">
+                  {note.metadata.title}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   )
 }
